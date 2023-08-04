@@ -6,6 +6,7 @@ from 0 to n - 1 and each box may
 contain keys to the other boxes.
 """
 
+
 def canUnlockAll(boxes):
     """
      a method that determines if all the boxes can be opened.
@@ -13,13 +14,14 @@ def canUnlockAll(boxes):
     :param boxes:
     :return: True or False
     """
-    opened_boxes = [0]
-
-    for i in range(len(boxes)):
-        for key in boxes[i]:
-            if key not in opened_boxes and key < len(boxes):
-                opened_boxes.append(key)
-    if len(opened_boxes) == len(boxes):
-        return True
-    else:
+    if not boxes or type(boxes) is not list:
         return False
+
+    unlocked = [0]
+    for n in unlocked:
+        for key in boxes[n]:
+            if key not in unlocked and key < len(boxes):
+                unlocked.append(key)
+    if len(unlocked) == len(boxes):
+        return True
+    return False
